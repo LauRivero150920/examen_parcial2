@@ -11,7 +11,7 @@ module.exports = class Incidente {
     }
     
     static fetchAll() {
-        return db.execute('SELECT Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id ORDER BY Z.created_at DESC')
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id ORDER BY Z.created_at DESC')
     }
 
     static fetchStatus(){
@@ -24,5 +24,10 @@ module.exports = class Incidente {
 
     static sumStateZombies(){
         return db.execute('CALL suma_estados_zombies()');
+    }
+
+    static updateZombieSate(id){
+        return db.execute('UPDATE nuevos_zombies SET estado = ? WHERE id = ?',
+        [2, id])
     }
 }

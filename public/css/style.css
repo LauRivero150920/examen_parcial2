@@ -35,3 +35,27 @@ h6{
     display: inline-block;
     margin-right: 15px;
 }
+
+#estado_1{
+    background-color: rgb(110, 204, 110);
+}
+#estado_2{
+    background-color: rgb(148, 204, 110);
+}
+#estado_3{
+    background-color: rgb(204, 195, 110);
+}
+
+#estado_4{
+    background-color: rgb(204, 152, 110);
+}
+
+#estado_5{
+    background-color: rgb(204, 110, 110);
+}
+
+#button_edit{
+    background-color: rgb(170, 161, 75);
+}
+
+

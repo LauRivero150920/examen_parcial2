@@ -10,6 +10,6 @@ router.post('/add', zombiesController.postZombie);
 
 router.get('/list', zombiesController.getZombies);
 
-//router.put('/add/:id', zombiesController.updateZombieState);
+router.put('/update/:id', zombiesController.updateZombieState);
 
 module.exports = router;

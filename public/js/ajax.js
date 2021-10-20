@@ -34,18 +34,19 @@ document.getElementById("enviar_ajax").onclick = () => {
                     let tabla = "";
                     let sum_zombies = "";
                     sum_zombies += '<h6>Total Zombies: ' + sum + ' </h6>';
-                    sum_zombies += '<h6>Total Infectados: ' + estado_1 + ' </h6>';
-                    sum_zombies += '<h6>Total Desorientados: ' + estado_2 + ' </h6>';
-                    sum_zombies += '<h6>Total Violentos: ' + estado_3 + ' </h6>';
-                    sum_zombies += '<h6>Total Desmayados: ' + estado_4 + ' </h6>';
-                    sum_zombies += '<h6>Total Transformados: ' + estado_5 + ' </h6>';
+                    sum_zombies += '<h6 id="estado_1">Total Infectados: ' + estado_1 + ' </h6>';
+                    sum_zombies += '<h6 id="estado_2">Total Desorientados: ' + estado_2 + ' </h6>';
+                    sum_zombies += '<h6 id="estado_3">Total Violentos: ' + estado_3 + ' </h6>';
+                    sum_zombies += '<h6 id="estado_4">Total Desmayados: ' + estado_4 + ' </h6>';
+                    sum_zombies += '<h6 id="estado_5">Total Transformados: ' + estado_5 + ' </h6>';
                     if(datos.length > 0){
                         for(let zombie of datos){
                             tabla += '<tr>';
                             tabla += '<td>' + zombie.nombre_completo +'</td>';
                             tabla += '<td>' + zombie.estado + '</td>';
                             tabla += '<td>' + new Date(zombie.created_at) + '</td>';
-                            tabla += 
+                            tabla += '<td><a class="waves-effect waves-light btn" id="button_edit" href="/update/'+zombie.id+'"><i class="material-icons left">edit</i>editar</a></td>';
+                            //tabla += '<td><a class="waves-effect waves-light btn" id="button_edit" href="/update"><i class="material-icons left">edit</i>editar</a></td>';
                             tabla +='</tr>';
                         }
                     }

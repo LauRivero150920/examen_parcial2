@@ -1,7 +1,6 @@
 //const { fetchAll } = require('../models/incidente'); // Imortar el fetch all del modelo del modelo
 const Zombie = require('../models/zombie');
-//const { fetchPlaces } = require('../models/incidente');
-let suma_incidentes;
+const { fetchAll, fetchStatus } = require('../models/zombie');
 let suma_estados = [];
 
 exports.addZombie = (request, response, next) => {
@@ -57,6 +56,31 @@ exports.getZombies = (request, response, next) => {
         });
 };
 
+exports.postZombie = (request, response, next) => {
+    const zombie = new Zombie(request.body.nombre_completo, request.body.created_at);
+    zombie.save(request.body.nombre_completo)
+        .then(([rows, fieldData]) => {
+            response.status(200).json({rows});
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
+exports.updateZombieState = (request, response, next) => {
+    Zombie.fetchStatus()
+        .then(([rows, fieldData]) => {
+            response.render('editar_estado',  {
+            titulo: "Editar Estado del Zombie",
+            lista_estados: rows,
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).redirect('/error');
+        });
+};
 /*exports.addIncident = (request, response, next) => {
     Incident.fetchPlaces()
         .then(([rows1, fieldData]) => {
