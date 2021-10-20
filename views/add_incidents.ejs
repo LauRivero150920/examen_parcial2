@@ -1,0 +1,84 @@
+<%- include('includes/head.ejs') %>
+    <%- include('includes/nav.ejs') %>
+    <h3 style="text-align: center;"><%= titulo_1 %></h3>
+    <br>
+    <div class="row">
+        <div class="col s6 m6 offset-m1 l6 offset-l1">
+            <!--<form action="/park_incidents/add" method="POST">-->
+                <label for="lugares">Lugar del Incidente: </label>
+                <select name="lugares" id="lugares">
+                    <option disabled selected>Seleccione un Lugar...</option>
+                    <% if (lista_lugares.length> 0) { %>
+                        <% for (let lugar of lista_lugares) { %>
+                            <option value="<%= lugar.id%>"><%= lugar.nombre%></option>
+                        <%}%>
+                    <%}%> 
+                </select>
+                <a class="waves-effect waves-light btn" id="add_place" href="/places/addPlace">
+                    Agregar Lugar
+                </a>
+                <br><br>
+
+                <label for="tipos">Tipo de Incidente: </label>
+                <select name="tipos" id="tipos">
+                    <option disabled selected>Seleccione un Tipo...</option>
+                    <% if (lista_tipos.length > 0) { %>
+                        <% for (let tipo of lista_tipos) { %>
+                            <option value="<%= tipo.id%>"><%= tipo.descripcion%></option>
+                        <%}%>
+                    <%}%>
+
+                </select>
+                <a class="waves-effect waves-light btn" id="add_type" href="/types/addType">
+                    Agregar Tipo
+                </a>
+                <br><br>
+
+                <a class="waves-effect waves-light btn" id="enviar_ajax" >
+                    Enviar
+                </a>
+
+                <br><br>
+                <a class="waves-effect waves-light btn" id="mostrar_tabla">
+                    Mostrar Tabla
+                </a>
+                
+
+                <div id="alert">
+
+                </div>
+            <!--</form>-->
+        </div>
+        <div class="col s6 m3 l5">
+            <img src="/images/dino.png" style="text-align: center; vertical-align: middle; width: 100%;">
+        </div>
+    </div>
+    <br>
+    <h3 style="text-align: center;"><%= titulo_2 %></h3>
+        <div class="row">
+            <div class="col s12 m12 l12" >
+                <div id="sum_incidents_cont">
+
+                </div>
+                <table id="lista_incidentes" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>Fecha/Hora</th>
+                            <th>Lugar</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</main>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script src="/js/ajax.js"></script>
+<script>M.AutoInit();</script>
+<script></script>
+</body>
+<br><br><br><br>
+<%- include('includes/footer.ejs') %>
