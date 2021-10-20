@@ -56,6 +56,176 @@ exports.getZombies = (request, response, next) => {
         });
 };
 
+exports.getZombiesInfected = (request, response, next) => {
+    Zombie.fetchInfected()
+        .then(([rows, fieldData]) => {
+            console.log("Get Exitoso 🚀"); 
+            Zombie.sumZombies()
+                .then(([sum, fieldData]) => {
+                    console.log("Suma Exitosa 🤓");
+                    suma_Zombies = sum[0][0].total_zombies;
+                    Zombie.sumStateZombies()
+                        .then(([sum_states, fieldData]) => {
+                            suma_estados[0] = sum_states[0][0].cantidad;
+                            suma_estados[1] = sum_states[0][1].cantidad;
+                            suma_estados[2] = sum_states[0][2].cantidad;
+                            suma_estados[3] = sum_states[0][3].cantidad;
+                            suma_estados[4] = sum_states[0][4].cantidad;
+                            console.log(suma_estados);
+                            response.status(200).json({sum: suma_Zombies, rows, suma_estados: suma_estados});
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            response.status(302).json({error: err});
+                        })
+                })
+                .catch(err => {
+                    console.log(err);
+                    response.status(302).json({error: err});
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
+exports.getZombiesDisoriented = (request, response, next) => {
+    Zombie.fetchDisoriented()
+        .then(([rows, fieldData]) => {
+            console.log("Get Exitoso 🚀"); 
+            Zombie.sumZombies()
+                .then(([sum, fieldData]) => {
+                    console.log("Suma Exitosa 🤓");
+                    suma_Zombies = sum[0][0].total_zombies;
+                    Zombie.sumStateZombies()
+                        .then(([sum_states, fieldData]) => {
+                            suma_estados[0] = sum_states[0][0].cantidad;
+                            suma_estados[1] = sum_states[0][1].cantidad;
+                            suma_estados[2] = sum_states[0][2].cantidad;
+                            suma_estados[3] = sum_states[0][3].cantidad;
+                            suma_estados[4] = sum_states[0][4].cantidad;
+                            console.log(suma_estados);
+                            response.status(200).json({sum: suma_Zombies, rows, suma_estados: suma_estados});
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            response.status(302).json({error: err});
+                        })
+                })
+                .catch(err => {
+                    console.log(err);
+                    response.status(302).json({error: err});
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
+exports.getZombiesViolent = (request, response, next) => {
+    Zombie.fetchViolent()
+        .then(([rows, fieldData]) => {
+            console.log("Get Exitoso 🚀"); 
+            Zombie.sumZombies()
+                .then(([sum, fieldData]) => {
+                    console.log("Suma Exitosa 🤓");
+                    suma_Zombies = sum[0][0].total_zombies;
+                    Zombie.sumStateZombies()
+                        .then(([sum_states, fieldData]) => {
+                            suma_estados[0] = sum_states[0][0].cantidad;
+                            suma_estados[1] = sum_states[0][1].cantidad;
+                            suma_estados[2] = sum_states[0][2].cantidad;
+                            suma_estados[3] = sum_states[0][3].cantidad;
+                            suma_estados[4] = sum_states[0][4].cantidad;
+                            console.log(suma_estados);
+                            response.status(200).json({sum: suma_Zombies, rows, suma_estados: suma_estados});
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            response.status(302).json({error: err});
+                        })
+                })
+                .catch(err => {
+                    console.log(err);
+                    response.status(302).json({error: err});
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
+exports.getZombiesPassed = (request, response, next) => {
+    Zombie.fetchPassed()
+        .then(([rows, fieldData]) => {
+            console.log("Get Exitoso 🚀"); 
+            Zombie.sumZombies()
+                .then(([sum, fieldData]) => {
+                    console.log("Suma Exitosa 🤓");
+                    suma_Zombies = sum[0][0].total_zombies;
+                    Zombie.sumStateZombies()
+                        .then(([sum_states, fieldData]) => {
+                            suma_estados[0] = sum_states[0][0].cantidad;
+                            suma_estados[1] = sum_states[0][1].cantidad;
+                            suma_estados[2] = sum_states[0][2].cantidad;
+                            suma_estados[3] = sum_states[0][3].cantidad;
+                            suma_estados[4] = sum_states[0][4].cantidad;
+                            console.log(suma_estados);
+                            response.status(200).json({sum: suma_Zombies, rows, suma_estados: suma_estados});
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            response.status(302).json({error: err});
+                        })
+                })
+                .catch(err => {
+                    console.log(err);
+                    response.status(302).json({error: err});
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
+exports.getZombiesTransformed = (request, response, next) => {
+    Zombie.fetchTransformed()
+        .then(([rows, fieldData]) => {
+            console.log("Get Exitoso 🚀"); 
+            Zombie.sumZombies()
+                .then(([sum, fieldData]) => {
+                    console.log("Suma Exitosa 🤓");
+                    suma_Zombies = sum[0][0].total_zombies;
+                    Zombie.sumStateZombies()
+                        .then(([sum_states, fieldData]) => {
+                            suma_estados[0] = sum_states[0][0].cantidad;
+                            suma_estados[1] = sum_states[0][1].cantidad;
+                            suma_estados[2] = sum_states[0][2].cantidad;
+                            suma_estados[3] = sum_states[0][3].cantidad;
+                            suma_estados[4] = sum_states[0][4].cantidad;
+                            console.log(suma_estados);
+                            response.status(200).json({sum: suma_Zombies, rows, suma_estados: suma_estados});
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            response.status(302).json({error: err});
+                        })
+                })
+                .catch(err => {
+                    console.log(err);
+                    response.status(302).json({error: err});
+                })
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).json({error: err});
+        });
+};
+
 exports.postZombie = (request, response, next) => {
     const zombie = new Zombie(request.body.nombre_completo, request.body.created_at);
     zombie.save(request.body.nombre_completo)

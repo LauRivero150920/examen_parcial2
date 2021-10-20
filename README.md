@@ -1,4 +1,5 @@
 # Examen Segundo Parcial
+# Cambios que hice después del examen 
 
 # Base de datos en maria db -> Database > zombies.sql
 # me faltó el actualizar, tuve problemas para desplegarlo :C 

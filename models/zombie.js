@@ -30,4 +30,24 @@ module.exports = class Incidente {
         return db.execute('UPDATE nuevos_zombies SET estado = ? WHERE id = ?',
         [2, id])
     }
+
+    static fetchInfected() {
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id AND Z.estado = 1 ORDER BY Z.created_at DESC')
+    }
+
+    static fetchDisoriented() {
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id AND Z.estado = 2 ORDER BY Z.created_at DESC')
+    }
+
+    static fetchViolent() {
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id AND Z.estado = 3 ORDER BY Z.created_at DESC')
+    }
+
+    static fetchPassed() {
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id AND Z.estado = 4 ORDER BY Z.created_at DESC')
+    }
+
+    static fetchTransformed() {
+        return db.execute('SELECT Z.id id, Z.nombre_completo nombre_completo, E.descripcion estado, Z.created_at created_at FROM nuevos_zombies Z, estados E WHERE Z.estado = E.id AND Z.estado = 5 ORDER BY Z.created_at DESC')
+    }
 }

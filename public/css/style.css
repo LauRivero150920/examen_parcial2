@@ -58,4 +58,23 @@ h6{
     background-color: rgb(170, 161, 75);
 }
 
+#mostrar1{
+    background-color: rgb(49, 121, 49);
+}
 
+#mostrar2{
+    background-color: rgb(87, 121, 49);
+}
+#mostrar3{
+    background-color: rgb(120, 121, 49);
+}
+#mostrar4{
+    background-color: rgb(121, 84, 49);
+}
+#mostrar5{
+    background-color: rgb(121, 49, 49);
+}
+
+#mostrar_todos{
+    background-color: rgb(20, 108, 160);
+}
