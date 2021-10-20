@@ -1,5 +1,5 @@
 .page-footer, nav{
-    background-color: rgb(53, 63, 63);
+    background-color: rgb(56, 105, 68);
 }
 body{
     font-family: 'Cairo', sans-serif;
@@ -32,4 +32,6 @@ h6{
     text-align: center;
     height: 25px;
     font-weight: bold;
+    display: inline-block;
+    margin-right: 15px;
 }

@@ -1,5 +1,5 @@
-const { fetchAll } = require('../models/tipo');
-const Tipo = require('../models/tipo');
+//const { fetchAll } = require('../models/tipo');
+//const Tipo = require('../models/tipo');
 
 
 exports.addType = (request, response, next) => {
